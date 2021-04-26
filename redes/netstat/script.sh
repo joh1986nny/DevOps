@@ -1,4 +1,4 @@
-Listado de puertos con listeners
+#Listado de puertos con listeners
 echo "Listado de puertos con Listeners"
 sudo netstat -tunlp | grep ESCUCHAR
 echo ""
