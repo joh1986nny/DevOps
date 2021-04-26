@@ -29,27 +29,34 @@ apt-get update
 apt-get install figlet
 apt-get install figlet
 
-## ver historial de contenedores
+## Ver historial de contenedores
 docker ps -a | head
 
 ## Crear imagen y taggearla
-docker commit <id contenedor>
-###### tag sin version - latest
-docker image tag <id imagen> <nombre imagen>
-###### tag con versionado 
-docker image tag <id imagen> <nombre imagen>:<version>
-###### ejecución del contenedor
+docker commit id_contenedor
+###### Tag sin version - latest
+docker image tag id_imagen nombre_imagen
+###### Tag con versionado 
+docker image tag id_imagen nombre_imagen>:version
+###### Ejecución del contenedor
 docker run mifiglet figlet hola
 
 # 3.Dockerfile
 
-## Crear Dockerfile
+## Crear figlet Dockerfile
 vim figlet/Dockerfile
 ## Construir contenedor
 docker build figlet/
 ## Taggeado + version 
-docker image tag <id imagen> autofiglet:1.0
+docker image tag id_imagen autofiglet:1.0
 ## Correr nuevo contenedor 
 docker run autofiglet:1.0 figlet "Hola Mundo"
 ## Historial de la imagen
-docker image  history  <id imagen>
+docker image  history  id_imagen
+
+## Añadir contenido a figlet + versionado
+docker build figlet/ -t autofiglet:1.1
+## Comprobar nueva version
+docker run autofiglet:1.1 ls /tmp/
+docker run autofiglet:1.1 cat /tmp/hola
+
