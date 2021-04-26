@@ -85,3 +85,8 @@ curl localhost
 docker run -v ~/DevOps/docker/nginx/index.html:/usr/share/nginx/html/index.html:ro -p 8080:80 -d nginx
 # Comprobar web
 curl localhost:8080
+
+# 5.Docker Compose
+
+## Lanzar docker-compose. MySQL + Wordpress
+docker compose up -d
