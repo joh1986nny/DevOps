@@ -62,21 +62,21 @@ docker run autofiglet:1.1 cat /tmp/hola
 
 # 4.Volumenes y puertos
 
-# Descargar imagen nginx
+## Descargar imagen nginx
 docker pull nginx
-# Correr en background nginx
+## Correr en background nginx
 docker run -d nginx
-# Instalar comando ps && ver procesos ejecutandose
+## Instalar comando ps && ver procesos ejecutandose
 apt-get update && apt-get install -y procps
 ps fax
-# Comprobar web
+## Comprobar web
 curl localhost
-# Parar contenedor nginx
+## Parar contenedor nginx
 docker stop id_contenedor
 
-# Correr contenedor con web propia 
+## Correr contenedor con web propia 
 docker run -v ~/DevOps/docker/nginx/index.html:/usr/share/nginx/html/index.html:ro -d nginx
-# Comprobar que se ha montado correctamente
+## Comprobar que se ha montado correctamente
 docker exec -it id_contenedor bash
 cat /usr/share/nginx/html/index.html 
 curl localhost
