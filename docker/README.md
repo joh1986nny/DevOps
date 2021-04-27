@@ -90,3 +90,13 @@ curl localhost:8080
 
 ## Lanzar docker-compose. MySQL + Wordpress
 docker compose up -d
+
+# 6. Multi Stage Builds
+###### Crea un go y descarga un archivo desde un servidor externo.
+
+## Construir Contenedor
+docker build -t alexellis/href-counter:latest .
+## Ejecutar contenedor 
+docker run -it alexellis/href-counter sh
+## Comprobar peso de la imagen
+ls -lh
