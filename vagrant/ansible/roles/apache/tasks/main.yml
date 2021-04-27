@@ -1,0 +1,44 @@
+#file: /roles/apache/tasks/main.yml
+
+  - name: install apache2
+    apt: name=apache2 update_cache=yes state=latest
+
+  - name: enabled mod_rewrite
+    apache2_module: name=rewrite state=present
+    notify:
+        - Restart Apache
+
+  - name: apache2 listen on port 8081
+    lineinfile: dest=/etc/apache2/ports.conf regexp="^Listen 80" line="Listen 8081" state=present
+    notify:
+        - Restart Apache
+
+  - name: apache2 virtualhost on port 8081
+    lineinfile: dest=/etc/apache2/sites-available/000-default.conf regexp="^<VirtualHost \*:80>" line="<VirtualHost *:8081>" state=present
+    notify:
+        
+  
+  - name: Copia Web Index
+    template:
+        src: "files/index.html"
+        dest: "/var/www/html/index.html"
+
+  - name: Set up Apache virtuahHost
+    template:
+        src: "files/apache.conf.j2"
+        dest: "/etc/apache2/sites-available/example.conf"
+  
+  - name: Enable new site
+    shell: /usr/sbin/a2ensite example.conf
+    notify: 
+        - Restart Apache
+
+  - name: Disable default Apache site
+    shell: /usr/sbin/a2dissite 000-default.conf
+    #when: disable_default
+    notify:
+        - Restart Apache
+
+  - name: Print all available facts
+    ansible.builtin.debug:
+      var: ansible_facts

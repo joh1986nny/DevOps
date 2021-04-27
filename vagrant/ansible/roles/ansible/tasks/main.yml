@@ -1,0 +1,13 @@
+# file: roles/ansible/tasks/main.yml
+ 
+#- name: Install Python3
+#  command: sudo apt install python3.9
+#  tags: ansible
+ 
+  - name: Install PIP3
+    command: apt-get -y install python3-pip
+    tags: ansible
+ 
+  - name: Install Ansible
+    command: pip3 install ansible
+    tags: ansible
