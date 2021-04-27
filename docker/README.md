@@ -103,3 +103,5 @@ docker build -t alexellis/href-counter:latest .
 docker run -it alexellis/href-counter sh
 ## Comprobar peso de la imagen
 ls -lh
+
+# 7. Subir imagen a Dockerhub
