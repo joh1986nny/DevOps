@@ -129,10 +129,12 @@ docker run -d \
 
 ## Comprobar instalación
 docker exec -it id_contenedor mysql -p
+
 mysql> show databases;
 
 ## Instalar contenedor netshoot y ver IP contenedor mysql
 docker run -it --network servidor-app nicolaka/netshoot
+
 dig mysql
 
 ```
