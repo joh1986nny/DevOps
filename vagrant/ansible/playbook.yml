@@ -1,0 +1,11 @@
+---
+ 
+#file: playbook.yml
+ 
+- hosts: all
+  become: true
+  gather_facts: no
+  roles:
+     - common_os_setup
+     - apache
+     - ansible

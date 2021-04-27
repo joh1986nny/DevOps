@@ -1,0 +1,11 @@
+---
+
+apache:
+    server_name: dev.example
+    ssl_folder: /etc/apache2/ssl
+    certificate_file: /etc/apache2/ssl/dev.example.crt
+    certificate_key_file: /etc/apache2/ssl/dev.example.key
+    custom_log_file: app_custom.log
+    error_log_file: app_error.log
+    custom_https_log: app_custom_https.log
+    error_https_log: app_error_https.log
