@@ -81,9 +81,9 @@ docker exec -it id_contenedor bash
 cat /usr/share/nginx/html/index.html 
 curl localhost
 
-# Exponer web en local 
+## Exponer web en local 
 docker run -v ~/DevOps/docker/nginx/index.html:/usr/share/nginx/html/index.html:ro -p 8080:80 -d nginx
-# Comprobar web
+## Comprobar web
 curl localhost:8080
 
 # 5.Docker Compose
