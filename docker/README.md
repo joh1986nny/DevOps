@@ -19,7 +19,10 @@ docker run alpine:3.7 ls -l
 docker run -it alpine:3.7 sh
 
 ## Correr comando en contenedor activo
-docker exec -it <id contenedor> cat /etc/motd
+docker exec -it id_contenedor cat /etc/motd
+
+## Ver logs contenedor
+docker logs id_contenedor
 
 # 2.Imágenes - Versiones de contenedores
 
@@ -100,3 +103,52 @@ docker build -t alexellis/href-counter:latest .
 docker run -it alexellis/href-counter sh
 ## Comprobar peso de la imagen
 ls -lh
+
+# 7.Subir imagen a Dockerhub
+
+## Loguearse en Dockerhub
+docker login 
+## Tag imagen a subir con nombre delante
+docker tag 9736646b209a arch3r86/autofiglet:1.1
+## Subir imagen
+docker push arch3r86/autofiglet:1.1
+
+# 8.Crear network
+
+## Crear red
+docker network create servidor-app
+
+## Crear contenedor en la red
+docker run -d \
+> --network servidor-app --network-alias mysql
+> --network servidor-app --network-alias mysql \
+> -v servidor-mysql-data:/var/lib/mysql \
+> -e MYSQL_ROOT_PASSWORD=secret \
+> -e MYSQL_DATABASE=servidores \
+> mysql:5.7
+
+## Comprobar instalación
+docker exec -it id_contenedor mysql -p
+mysql> show databases;
+
+## Instalar contenedor netshoot y ver ip contenedor mysql
+docker run -it --network servidor-app nicolaka/netshoot
+dig mysql
+```
+; <<>> DiG 9.16.11 <<>> mysql
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 3530
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;mysql.                         IN      A
+
+;; ANSWER SECTION:
+mysql.                  600     IN      A       172.19.0.2
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.11#53(127.0.0.11)
+;; WHEN: Tue Apr 27 11:56:28 UTC 2021
+;; MSG SIZE  rcvd: 44
+```
