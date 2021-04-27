@@ -19,7 +19,10 @@ docker run alpine:3.7 ls -l
 docker run -it alpine:3.7 sh
 
 ## Correr comando en contenedor activo
-docker exec -it <id contenedor> cat /etc/motd
+docker exec -it id_contenedor cat /etc/motd
+
+## Ver logs contenedor
+docker logs id_contenedor
 
 # 2.Imágenes - Versiones de contenedores
 
