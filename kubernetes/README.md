@@ -27,12 +27,12 @@ minikube ip
 
 ### PODS
 #### Listar pods
-kubectl get pods
+> kubectl get pods
 #### Crear pod -- nginx
-kubectl run servidorweb --image=nginx:alpine
+> kubectl run servidorweb --image=nginx:alpine
 #### Ver Logs de un pod
-kubectl describe pod servidorweb 
+> kubectl describe pod servidorweb 
 #### Ver recursos api
-kubectl api-resorces
+> kubectl api-resorces
 #### Eliminar pod
-kubectl delete pod servidorweb-failed
+> kubectl delete pod servidorweb-failed
