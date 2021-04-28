@@ -8,6 +8,8 @@ minikube start
 minikube stop
 ###### Borrar minikube
 minikube delete
+###### Ver estado minikube
+minikube status
 ###### Ver listado de addons
 minikube addons list
 ###### Habilitar addons
@@ -18,3 +20,10 @@ kubectl -n kube-system get pods
 minukube ssh
 ###### Ver IP de minikube
 minikube ip
+
+# KUBERNETES
+
+## Comandos basicos
+
+#### 
+kubectl get pods
