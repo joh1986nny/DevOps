@@ -25,14 +25,14 @@ minikube ip
 
 ## Comandos basicos
 
-#### PODS
-###### Listar pods
+### PODS
+#### Listar pods
 kubectl get pods
-###### Crear pod -- nginx
+#### Crear pod -- nginx
 kubectl run servidorweb --image=nginx:alpine
-###### Ver Logs de un pod
+#### Ver Logs de un pod
 kubectl describe pod servidorweb 
-###### Ver recursos api
+#### Ver recursos api
 kubectl api-resorces
-###### Eliminar pod
+#### Eliminar pod
 kubectl delete pod servidorweb-failed
