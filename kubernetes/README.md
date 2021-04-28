@@ -3,23 +3,23 @@
 ## Comandos básicos
 
 ### Inicializar minikube
-minikube start
+> minikube start
 ### Parar minikube
-minikube stop
+> minikube stop
 ### Borrar minikube
-minikube delete
+> minikube delete
 ### Ver estado minikube
-minikube status
+> minikube status
 ### Ver listado de addons
-minikube addons list
+> minikube addons list
 ### Habilitar addons
-minikube addons enable metrics-server
+> minikube addons enable metrics-server
 ### Ver estado de pods
-kubectl -n kube-system get pods
+> kubectl -n kube-system get pods
 ### Acceso a la maquina minikube
-minukube ssh
+> minukube ssh
 ### Ver IP de minikube
-minikube ip
+> minikube ip
 
 # KUBERNETES
 
