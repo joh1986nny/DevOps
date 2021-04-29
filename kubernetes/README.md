@@ -36,3 +36,11 @@
 > kubectl api-resorces
 #### Eliminar pod
 > kubectl delete pod servidorweb-failed
+#### Ver declaracion de un pod
+> kubectl get pod servidorweb -o yaml
+#### Port-forwarding 
+> kubectl port-forward servidorweb 7000:80
+#### Abrir terminal de un pod
+> kubectl exec -ti servidorweb -- sh
+#### Ver logs de un pod
+> kubectl logs servidorweb
