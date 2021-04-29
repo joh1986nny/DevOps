@@ -30,10 +30,14 @@
 > kubectl get pods
 #### Crear pod -- nginx
 > kubectl run servidorweb --image=nginx:alpine
+#### Crear pod basado en yaml
+> kubectl apply -f autowebserver.yaml
 #### Ver Logs de un pod
 > kubectl describe pod servidorweb 
-#### Ver recursos api
+#### Ver recursos API
 > kubectl api-resorces
+#### Ver versiones API
+> kubectl api-versions
 #### Eliminar pod
 > kubectl delete pod servidorweb-failed
 #### Ver declaracion de un pod
@@ -44,3 +48,4 @@
 > kubectl exec -ti servidorweb -- sh
 #### Ver logs de un pod
 > kubectl logs servidorweb
+
