@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: autowebserver
+spec:
+  containers:
+  - name: autowebserver
+    image: nginx:alpine
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: autowebserver-2
+spec:
+  containers:
+  - name: autowebserver-2
+    image: nginx:alpine
