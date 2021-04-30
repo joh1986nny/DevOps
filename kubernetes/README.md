@@ -49,3 +49,18 @@
 #### Ver logs de un pod
 > kubectl logs servidorweb
 
+## Manifiesto con doble contenedor
+
+#### Crear contenedor
+> kubectl apply -f doblecontenedor.yaml
+
+#### comprobar funcionamiento
+> docker exec -ti id_minikube_container sh
+
+```
+# curl 172.17.0.8:8081
+cont1
+# curl 172.17.0.8:8082
+cont2
+# 
+```
