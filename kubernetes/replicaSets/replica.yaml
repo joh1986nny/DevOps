@@ -1,0 +1,21 @@
+#Replicaset
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset-prueba
+  labels:
+    app: replicaset-prueba
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pod-label
+  #Empieza el POD
+  template:
+    metadata:
+      labels:
+        app: pod-label
+    spec:
+      containers:
+      - name: autowebserver
+        image: nginx:alpine
