@@ -67,7 +67,7 @@ cont2
 # 
 ```
 
-### REPLICASETS
+## REPLICASETS
 
 #### Ver el owner de un pod replicado
 > kubectl get pod replicaset-prueba-dqmzq -o yaml
@@ -87,7 +87,7 @@ ownerReferences:
 #### Eliminar replicaset
 > kubectl delete -f nombre_archivo.yaml
 
-### DEPLOYMENTS
+## DEPLOYMENTS
 
 #### Construir deployment 
 > kubectl apply -f deploy.yaml
