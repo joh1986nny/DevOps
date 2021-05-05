@@ -1,13 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations: 
-    kubernetes.io/change-cause: "Change Port to 110"
   name: deployment-prueba
   labels:
     app: front
 spec:
-  #revisionHistoryLimit: 1
   replicas: 3
   selector:
     matchLabels:
@@ -19,6 +16,19 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: nginx
-        ports:
-          - containerPort: 110
+        image: nginx:alpine
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  labels: 
+    app: front
+spec:
+  type: ClusterIP
+  selector:
+    app: front
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
