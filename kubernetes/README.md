@@ -112,3 +112,6 @@ deployment.apps/deployment-prueba
 REVISION  CHANGE-CAUSE
 1         kubectl apply --filename=deployments/deploy.yaml --record=true
 ```
+
+#### ROLLBACK
+> kubectl rollour undo deployment deployment-prueba --to-revision=2
