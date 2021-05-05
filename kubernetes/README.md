@@ -99,4 +99,6 @@ ownerReferences:
 > kubectl get deployment --show-labels
 #### Ver si se ha creado el deployment
 > kubectl rollout status deployment deployment-prueba
+#### Revision de versiones
+> kubectl rollout history deployment deployment-prueba
 
