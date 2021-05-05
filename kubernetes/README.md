@@ -86,3 +86,15 @@ ownerReferences:
 
 #### Eliminar replicaset
 > kubectl delete -f nombre_archivo.yaml
+
+### DEPLOYMENTS
+
+#### Construir deployment 
+> kubectl apply -f deploy.yaml
+#### Ver deployments
+> kubectl get deployment
+#### Ver deployments y labels
+> kubectl get deployment --show-labels
+#### Ver si se ha creado el deployment
+> kubectl rollout status deployment deployment-prueba
+
