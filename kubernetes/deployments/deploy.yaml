@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: nginx:alpine
+        image: nginx

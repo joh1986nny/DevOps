@@ -86,6 +86,8 @@ ownerReferences:
 
 #### Eliminar replicaset
 > kubectl delete -f nombre_archivo.yaml
+#### Obtener replicasets
+> kubectl get rs
 
 ## DEPLOYMENTS
 
