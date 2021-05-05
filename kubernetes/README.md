@@ -112,6 +112,45 @@ deployment.apps/deployment-prueba
 REVISION  CHANGE-CAUSE
 1         kubectl apply --filename=deployments/deploy.yaml --record=true
 ```
-
 #### ROLLBACK
 > kubectl rollour undo deployment deployment-prueba --to-revision=2
+
+## SERVICIOS 
+
+#### Ver servicios 
+> kubectl get svc
+#### Ver servicios por etiqueta
+> kubectl get svc -l app=front
+#### Describir servicio 
+> kubectl describe svc my-service
+```
+Name:              my-service
+Namespace:         default
+Labels:            app=front
+Annotations:       <none>
+Selector:          app=front
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.103.42.158
+IPs:               10.103.42.158
+Port:              <unset>  8080/TCP
+TargetPort:        80/TCP
+Endpoints:         172.17.0.4:80,172.17.0.5:80,172.17.0.6:80 <--- punto de entrada a pods
+Session Affinity:  None
+Events:            <none>
+```
+
+#### Ver endpoints
+> kubectl get endpoints
+```
+NAME         ENDPOINTS                                   AGE
+kubernetes   192.168.49.2:8443                           16d
+my-service   172.17.0.4:80,172.17.0.5:80,172.17.0.6:80   10m
+```
+> kubectl get pods -o wide
+```
+NAME                                 READY   STATUS    RESTARTS   AGE   IP           NODE       NOMINATED NODE   READINESS GATES
+deployment-prueba-67784d784f-gqhrt   1/1     Running   0          11m   172.17.0.4   minikube   <none>           <none>
+deployment-prueba-67784d784f-hbwgn   1/1     Running   0          11m   172.17.0.6   minikube   <none>           <none>
+deployment-prueba-67784d784f-nm8kp   1/1     Running   0          11m   172.17.0.5   minikube   <none>           <none>
+```
