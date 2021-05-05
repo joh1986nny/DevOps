@@ -48,6 +48,8 @@
 > kubectl exec -ti servidorweb -- sh
 #### Ver logs de un pod
 > kubectl logs servidorweb
+#### Cambiar label de un pod
+> kubectl label pods servidorweb2 app=pod-label
 
 ## Manifiesto con doble contenedor
 
@@ -64,3 +66,35 @@ cont1
 cont2
 # 
 ```
+
+### REPLICASETS
+
+#### Ver el owner de un pod replicado
+> kubectl get pod replicaset-prueba-dqmzq -o yaml
+
+```
+ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: ReplicaSet
+    name: replicaset-prueba
+    uid: 420b7103-62b1-41c6-91a8-9e4f1330ebff
+  resourceVersion: "162378"
+  uid: a23c8828-a5d4-4084-9f40-0b0218630710  <-----
+```
+
+#### Eliminar replicaset
+> kubectl delete -f nombre_archivo.yaml
+
+### DEPLOYMENTS
+
+#### Construir deployment 
+> kubectl apply -f deploy.yaml
+#### Ver deployments
+> kubectl get deployment
+#### Ver deployments y labels
+> kubectl get deployment --show-labels
+#### Ver si se ha creado el deployment
+> kubectl rollout status deployment deployment-prueba
+
