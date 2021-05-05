@@ -102,3 +102,13 @@ ownerReferences:
 #### Revision de versiones
 > kubectl rollout history deployment deployment-prueba
 
+#### CHANGE-CAUSE
+> kubectl apply -f deployments/deploy.yaml  --record
+
+> kubectl rollout history deployment deployment-prueba
+
+```
+deployment.apps/deployment-prueba 
+REVISION  CHANGE-CAUSE
+1         kubectl apply --filename=deployments/deploy.yaml --record=true
+```
