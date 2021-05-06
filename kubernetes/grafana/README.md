@@ -20,9 +20,12 @@
 # GRAFANA PERSISTENTE
 
 ## Crear ficheros deployment, volumen persistencia y servicio balanceador 
-Deployment [Deployment](https://github.com/joh1986nny/DevOps/tree/master/kubernetes/grafana/grafana-deployment.yaml).
-Volumen Persistente [Volumen Persistente](https://github.com/joh1986nny/DevOps/tree/master/kubernetes/grafana/grafana-pvc.yaml).
-Servicio Balanceador [Servicio Balanceador](https://github.com/joh1986nny/DevOps/tree/master/kubernetes/grafana/grafana-service.yaml).
+Deployment: [Fichero Deployment](https://github.com/joh1986nny/DevOps/tree/master/kubernetes/grafana/grafana-deployment.yaml).
+
+Volumen Persistente: [Fichero Volumen Persistente](https://github.com/joh1986nny/DevOps/tree/master/kubernetes/grafana/grafana-pvc.yaml).
+
+Servicio Balanceador: [Fichero Servicio Balanceador](https://github.com/joh1986nny/DevOps/tree/master/kubernetes/grafana/grafana-service.yaml).
+
 
 ## Crear deployment, persistencia y servicio
 > kubectl create -f grafana-deployment.yaml -f grafana-pvc.yaml -f grafana-service.yaml
@@ -37,3 +40,16 @@ kubernetes     ClusterIP      10.96.0.1       <none>        443/TCP          16d
 my-service     ClusterIP      10.103.42.158   <none>        8080/TCP         17h
 my-service-1   NodePort       10.99.19.40     <none>        8080:31965/TCP   16h
 ```
+
+## Comprobar el estado
+> kubectl get svc
+```
+NAME           TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+grafana        LoadBalancer   10.100.76.239   <pending>     3000:31416/TCP   19s
+kubernetes     ClusterIP      10.96.0.1       <none>        443/TCP          16d
+my-service     ClusterIP      10.103.42.158   <none>        8080/TCP         17h
+my-service-1   NodePort       10.99.19.40     <none>        8080:31965/TCP   16h
+```
+
+## Loggin en grafana: 192.168.49.2:31416
+![Loggin grafana](https://github.com/joh1986nny/DevOps/blob/master/images/grafana_persistente.png)
