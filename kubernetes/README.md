@@ -101,6 +101,8 @@ ownerReferences:
 > kubectl rollout status deployment deployment-prueba
 #### Revision de versiones
 > kubectl rollout history deployment deployment-prueba
+#### Eliminar deployment
+> kubectl delete deployment ~~grafana~~
 
 #### CHANGE-CAUSE
 > kubectl apply -f deployments/deploy.yaml  --record
