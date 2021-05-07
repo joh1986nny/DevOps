@@ -9,7 +9,7 @@
 ## Loggin en grafana: 192.168.49.2:31051
 ![Loggin grafana](https://github.com/joh1986nny/DevOps/blob/master/images/grafana_loggin.png)
 
-## Instalar complemento grafana kubernetes
+## Instalar complementos grafana kubernetes
 > kubectl exec -it grafana-79b7c549b4-gptz2 grafana-cli plugins install grafana-kubernetes-app
 
 ## Escalar implementación
@@ -53,3 +53,6 @@ my-service-1   NodePort       10.99.19.40     <none>        8080:31965/TCP   16h
 
 ## Loggin en grafana: 192.168.49.2:31416
 ![Loggin grafana](https://github.com/joh1986nny/DevOps/blob/master/images/grafana_persistente.png)
+
+## Instalar complementos grafana kubernetes
+> kubectl exec -it grafana-56746db67d-dvswq grafana-cli plugins install grafana-kubernetes-app
