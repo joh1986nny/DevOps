@@ -5,10 +5,11 @@ metadata:
   labels:
     app: grafana
 spec:
-  type: ClusterIP
-  ports:
-  - port: 3000
-    protocol: TCP
-    targetPort: http
+  type: NodePort
+
   selector:
     app: grafana
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
