@@ -37,3 +37,11 @@ prometheus-operated   ClusterIP   None             <none>        9090/TCP       
 prometheus-operator   ClusterIP   None             <none>        8080/TCP         145m
 servidores-web        NodePort    10.103.52.149    <none>        8080:30650/TCP   3d2h
 ```
+## Crear Prometheus Service Monitor
+> kubectl apply -f prometheus_servicemonitor.yaml
+```
+johnny@johnny-inetum:~/DevOps/kubernetes/prometheus$ kubectl apply -f prometheus_servicemonitor.yaml
+servicemonitor.monitoring.coreos.com/prometheus-self created
+```
+
+![Prometheus Objetives](https://github.com/joh1986nny/DevOps/blob/master/images/prometheus_objetives.png)
