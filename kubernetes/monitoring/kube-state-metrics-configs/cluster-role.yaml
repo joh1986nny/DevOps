@@ -24,6 +24,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - extensions
   resources:
@@ -34,6 +35,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - apps
   resources:
@@ -44,6 +46,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - batch
   resources:
@@ -52,6 +55,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - autoscaling
   resources:
@@ -59,12 +63,14 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - authentication.k8s.io
   resources:
   - tokenreviews
   verbs:
   - create
+  - get
 - apiGroups:
   - authorization.k8s.io
   resources:
@@ -78,6 +84,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - certificates.k8s.io
   resources:
@@ -85,6 +92,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - storage.k8s.io
   resources:
@@ -93,6 +101,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - admissionregistration.k8s.io
   resources:
@@ -101,6 +110,7 @@ rules:
   verbs:
   - list
   - watch
+  - get
 - apiGroups:
   - networking.k8s.io
   resources:
@@ -108,3 +118,4 @@ rules:
   verbs:
   - list
   - watch
+  - get
